@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test';
+import { HOME_PATH } from './helpers';
 
 test.describe('STAC Browser Homepage', () => {
   test('should load the homepage successfully', async ({ page }) => {
     // Navigate to the homepage
-    await page.goto('/');
+    await page.goto(HOME_PATH);
     
     // Check if the page title is visible
     await expect(page.locator('header [role="banner"]')).toBeVisible();
@@ -13,7 +14,7 @@ test.describe('STAC Browser Homepage', () => {
   });
 
   test('should render language dropdown with flag icon and correct defaults', async ({ page }) => {
-    await page.goto('/');
+    await page.goto(HOME_PATH);
     
     // Find the language dropdown button - it should have "Language: English" text
     const languageButton = page.getByRole('button', { name: /language.*english/i });
@@ -41,7 +42,7 @@ test.describe('STAC Browser Homepage', () => {
   });
 
   test('should render catalog URL input with proper elements', async ({ page }) => {
-    await page.goto('/');
+    await page.goto(HOME_PATH);
     
     // Check if the label/heading is visible
     const label = page.getByText(/please specify a stac catalog or api/i);
@@ -61,7 +62,7 @@ test.describe('STAC Browser Homepage', () => {
   });
 
   test('should allow typing in the catalog URL input', async ({ page }) => {
-    await page.goto('/');
+    await page.goto(HOME_PATH);
     
     const input = page.getByRole('textbox', { name: /please specify a stac catalog or api/i });
     
@@ -73,7 +74,7 @@ test.describe('STAC Browser Homepage', () => {
   });
 
   test('should show error message while typing invalid URL', async ({ page }) => {
-    await page.goto('/');
+    await page.goto(HOME_PATH);
     
     const input = page.getByRole('textbox', { name: /please specify a stac catalog or api/i });
     
@@ -86,7 +87,7 @@ test.describe('STAC Browser Homepage', () => {
   });
 
   test('should navigate to catalog when valid URL is loaded', async ({ page }) => {
-    await page.goto('/');
+    await page.goto(HOME_PATH);
     
     const input = page.getByRole('textbox', { name: /please specify a stac catalog or api/i });
     const loadButton = page.getByRole('button', { name: /^load$/i });
