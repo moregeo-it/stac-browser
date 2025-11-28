@@ -43,7 +43,7 @@ jobs:
       run: npx playwright test
       env:
         CI: true
-        PLAYWRIGHT_BASE_URL: https://moregeo-it.github.io/stac-browser/
+        PLAYWRIGHT_BASE_URL: https://moregeo-it.github.io
      
     - name: Upload test results
       uses: actions/upload-artifact@v4
