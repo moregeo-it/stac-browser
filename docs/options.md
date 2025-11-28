@@ -129,7 +129,7 @@ This also excludes hosting your STAC catalog in the STAC Browser (sub-)folders.
 #### `hash`
 
 If your host/server doesn't support URL rewriting or you experience other related problems, you can enable *hash mode*.
-Either set this option to `hash` in the config file or append `--historyMode=hash` when running or building.
+Either set this option to `hash` in the config file or set `SB_historyMode=hash` as an environment variable when running or building.
 Known hosts that require hash mode are Amazon S3 and GitHub Pages.
 
 ### pathPrefix
@@ -140,7 +140,7 @@ If you don't deploy the STAC Browser instance at the root path of your (sub) dom
 when building (or running) STAC Browser.
 
 ```bash
-npm run build -- --pathPrefix="/browser/"
+SB_pathPrefix="/browser/" npm run build
 ```
 
 This will build STAC Browser in a way that it can be hosted at `https://example.com/browser` for example.

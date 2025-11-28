@@ -64,7 +64,7 @@ To browse only your own static STAC catalog or STAC API, set the `catalogUrl` CL
 In this example we point to EarthSearch (`https://earth-search.aws.element84.com/v1/`):
 
 ```bash
-npm start -- --open --catalogUrl="https://earth-search.aws.element84.com/v1/"
+SB_catalogUrl="https://earth-search.aws.element84.com/v1/" npm start -- --open
 ```
 
 To open a local file on your system, see the chapter [Using Local Files](docs/local_files.md).
@@ -72,7 +72,7 @@ To open a local file on your system, see the chapter [Using Local Files](docs/lo
 If you'd like to publish the STAC Browser instance use the following command:
 
 ```bash
-npm run build -- --catalogUrl="https://earth-search.aws.element84.com/v1/"
+SB_catalogUrl="https://earth-search.aws.element84.com/v1/" npm run build
 ```
 
 This will only work on the root path of your domain though. If you'd like to publish in a sub-folder,

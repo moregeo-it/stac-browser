@@ -12,7 +12,10 @@ jobs:
           node-version: 'lts/*'
       - uses: actions/checkout@v4
       - run: npm ci
-      - run: npm run build -- --pathPrefix="/stac-browser" --historyMode=hash
+      - run: npm run build
+        env:
+          SB_pathPrefix: "/stac-browser"
+          SB_historyMode: "hash"
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

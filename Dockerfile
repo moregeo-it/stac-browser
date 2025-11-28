@@ -10,7 +10,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 RUN \[ "${DYNAMIC_CONFIG}" == "true" \] && sed -i "s|<!-- <script defer=\"defer\" src=\"/config.js\"></script> -->|<script defer=\"defer\" src=\"${pathPrefix}config.js\"></script>|g" public/index.html
-RUN npm run build -- --historyMode="${historyMode}" --pathPrefix="${pathPrefix}"
+RUN Sb_historyMode="${historyMode}" SB_pathPrefix="${pathPrefix}" npm run build
 
 
 FROM nginxinc/nginx-unprivileged:1-alpine
