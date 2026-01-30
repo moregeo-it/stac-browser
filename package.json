@@ -1,6 +1,7 @@
 {
   "name": "@radiantearth/stac-browser",
   "version": "5.0.0-beta.1",
+  "type": "module",
   "description": "A full-fledged UI in Vue for browsing and searching static STAC catalogs and STAC APIs.",
   "main": "src/main.js",
   "scripts": {
@@ -9,7 +10,8 @@
     "build:preview": "vite build && vite preview",
     "build:report": "vite build --mode report",
     "build:minimal": "vite build --mode minimal",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
+    "lint": "eslint --fix src",
+    "lint:check": "eslint src",
     "i18n:fields": "node helpers/fields_locales.js"
   },
   "bugs": {
@@ -42,7 +44,7 @@
     "@radiantearth/stac-fields": "~1.5.7",
     "@radiantearth/stac-migrate": "~2.0.2",
     "@turf/mask": "^7.2.0",
-    "@vuepic/vue-datepicker": "^12.1.0",
+    "@vuepic/vue-datepicker": "^11.0.2",
     "ajv-i18n": "^4.2.0",
     "axios": "^1.2.0",
     "bootstrap": "^5.3.8",
@@ -68,11 +70,12 @@
     "yargs": "^18.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
     "@iconify-json/bi": "^1.2.6",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/compiler-sfc": "^3.5.22",
-    "eslint": "^8.57.1",
-    "eslint-plugin-vue": "^9.28.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-vue": "^10.7.0",
     "rollup-plugin-visualizer": "^6.0.5",
     "sass": "^1.26.5",
     "unplugin-icons": "^23.0.1",
