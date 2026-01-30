@@ -1,5 +1,5 @@
-import Fields from '@radiantearth/stac-fields/fields-normalized.json';
-import HardCodedFields from './fields_locales.json';
+import Fields from '@radiantearth/stac-fields/fields-normalized.json' with { type: 'json' };
+import HardCodedFields from './fields_locales.json' with { type: 'json' };
 import fs from 'fs';
 
 const translatable = ["label", "explain", "unit"];
