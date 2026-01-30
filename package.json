@@ -44,7 +44,7 @@
     "@radiantearth/stac-fields": "~1.5.7",
     "@radiantearth/stac-migrate": "~2.0.2",
     "@turf/mask": "^7.2.0",
-    "@vuepic/vue-datepicker": "^11.0.2",
+    "@vuepic/vue-datepicker": "^12.1.0",
     "ajv-i18n": "^4.2.0",
     "axios": "^1.2.0",
     "bootstrap": "^5.3.8",
