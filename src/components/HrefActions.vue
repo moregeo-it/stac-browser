@@ -348,7 +348,7 @@ export default {
             if (this.$te(key)) {
               return this.$t(key);
             }
-          } catch (e) {
+          } catch {
             // Fall back to the default
           }
           return this.$t('protocol.s3.default');

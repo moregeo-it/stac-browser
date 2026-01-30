@@ -1,6 +1,7 @@
 import js from '@eslint/js';
 import pluginVue from 'eslint-plugin-vue';
-
+import globals from 'globals'; // Import globals package
+  
 export default [
   // Apply to JavaScript and Vue files
   {
@@ -9,22 +10,12 @@ export default [
       ecmaVersion: 2022,
       sourceType: 'module',
       globals: {
-        // Browser globals
-        window: 'readonly',
-        document: 'readonly',
-        navigator: 'readonly',
-        console: 'readonly',
-        
-        // Node globals
-        require: 'readonly',
-        process: 'readonly',
-        __dirname: 'readonly',
-        __filename: 'readonly',
-        
+        ...globals.browser,
         // Your custom globals
         STAC_BROWSER_VERSION: 'readonly',
         CONFIG_PATH: 'readonly',
-        CONFIG_CLI: 'readonly'
+        CONFIG_CLI: 'readonly',
+        CONFIG: 'readonly'
       }
     }
   },
