@@ -47,7 +47,7 @@ delete env._;
 delete env.$0;
 
 // For config.js, you need to use dynamic import
-const configFilePath = path.resolve(env.CONFIG ? env.CONFIG : "./config.js");
+const configFilePath = "file://" + path.resolve(env.CONFIG ? env.CONFIG : "./config.js");
 
 // Note: This makes the config async - you'll need to handle this
 let configFromFile;
