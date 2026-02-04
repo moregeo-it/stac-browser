@@ -74,7 +74,7 @@
           <a :href="link.url" target="_blank">{{ $te(`footerLinks.${link.label}`) ? $t(`footerLinks.${link.label}`) : link.label }}</a>
         </li>
       </ul>
-      <small class="poweredby text-muted" v-html="poweredByText" />
+      <small class="poweredby text-muted">{{ $t('poweredBy') }} <a href="https://github.com/radiantearth/stac-browser" target="_blank">STAC Browser</a> {{ browserVersion }} </small>
     </footer>
     <b-popover
       v-if="root" id="popover-root" class="popover-large" target="popover-root-btn"
@@ -171,10 +171,6 @@ export default defineComponent({
       else {
         return "";
       }
-    },
-    poweredByText() {
-      const link = `<a href="https://github.com/radiantearth/stac-browser" target="_blank">STAC Browser</a> ${this.browserVersion}`;
-      return this.$t('poweredBy', { link });
     },
     isSearchPage() {
       return this.$route.name === 'search';

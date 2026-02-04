@@ -18,7 +18,9 @@
     </b-form>
     <hr v-if="stacIndex.length > 0">
     <b-form-group v-if="stacIndex.length > 0" class="stac-index">
-      <template v-html="selectStacIndexLabel" />
+      <template #label>
+        {{ $t('index.selectStacIndex') }} <a href="https://stacindex.org" target="_blank">{{ $t('index.stacIndex') }}</a>:
+      </template>
       <b-list-group> 
         <template v-for="catalog in stacIndex" :key="catalog.id">
           <b-list-group-item
@@ -81,9 +83,6 @@ export default defineComponent({
       } catch (error) {
         return this.$t('index.urlInvalid', { error: error.message });
       }
-    },
-    selectStacIndexLabel() {
-      return this.$t('index.selectStacIndex', { stacIndex: '<a href="https://stacindex.org" target="_blank">STAC Index</a>' });
     }
   },
   async created() {
