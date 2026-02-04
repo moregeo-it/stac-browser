@@ -86,7 +86,7 @@
     "vite-plugin-node-polyfills": "^0.25.0"
   },
   "optionalDependencies": {
-    "ol-mapbox-style": "^13.2.0"
+    "ol-mapbox-style": "~13.2.0"
   },
   "browserslist": [
     "> 1%",
