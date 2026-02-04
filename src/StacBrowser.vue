@@ -74,11 +74,7 @@
           <a :href="link.url" target="_blank">{{ $te(`footerLinks.${link.label}`) ? $t(`footerLinks.${link.label}`) : link.label }}</a>
         </li>
       </ul>
-      <i18n tag="small" path="poweredBy" class="poweredby text-muted">
-        <template #link>
-          <a href="https://github.com/radiantearth/stac-browser" target="_blank">STAC Browser</a> {{ browserVersion }}
-        </template>
-      </i18n>
+      <small class="poweredby text-muted" v-html="poweredByText" />
     </footer>
     <b-popover
       v-if="root" id="popover-root" class="popover-large" target="popover-root-btn"
@@ -227,13 +223,13 @@ export default defineComponent({
     type() {
       if (this.data instanceof STAC) {
         if (this.data.isItem()) {
-          return this.$tc('stacItem');
+          return this.$t('stacItem', 1);
         }
         else if (this.data.isCollection()) {
-          return this.$tc(`stacCollection`);
+          return this.$t(`stacCollection`, 1);
         }
         else if (this.data.isCatalog()) {
-          return this.$tc(`stacCatalog`);
+          return this.$t(`stacCatalog`, 1);
         }
         else if (Utils.hasText(this.data.type)) {
           return this.data.type;
