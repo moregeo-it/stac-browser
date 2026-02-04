@@ -1,2 +1,0 @@
-function r(n,t,u,e){return e!==void 0?(e[0]=n,e[1]=t,e[2]=u,e):[n,t,u]}function c(n,t,u){return n+"/"+t+"/"+u}function g(n){return c(n[0],n[1],n[2])}function h(n){return f(n[0],n[1],n[2])}function f(n,t,u){return(t<<n)+u}function Z(n,t){const u=n[0],e=n[1],s=n[2];if(t.getMinZoom()>u||u>t.getMaxZoom())return!1;const a=t.getFullTileRange(u);return a?a.containsXY(e,s):!0}export{g as a,f as b,r as c,c as g,h,Z as w};
-//# sourceMappingURL=tilecoord-CR7vLr2I.js.map

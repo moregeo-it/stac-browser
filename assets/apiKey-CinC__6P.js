@@ -1,0 +1,2 @@
+import{cH as r,cC as u}from"./index-C4WwNGim.js";import"./utils-B8zgF4c8.js";import"./_commonjsHelpers-CE1G-McA.js";import"./I18N-DlIXJTel.js";class c extends r{constructor(t,e,o){super(t,e,o)}getButtonTitle(){return u.global.t("authentication.button.title")}getComponent(){return"ApiKey"}getComponentProps(){return{description:this.options.description}}async logout(){return this.router.currentRoute.value.name!=="logout"&&this.router.push("/auth/logout"),!0}updateStore(t){return this._updateStore(t)}}export{c as default};
+//# sourceMappingURL=apiKey-CinC__6P.js.map
