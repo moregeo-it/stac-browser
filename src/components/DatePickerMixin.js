@@ -1,5 +1,5 @@
 import { mapState } from "vuex";
-import VueDatePicker from '@vuepic/vue-datepicker';
+import { VueDatePicker } from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
 
 export default {
@@ -39,8 +39,6 @@ export default {
           this.weekStartDay = options.locale.options.weekStartsOn;
         } catch (e) {
           console.error(`Could not load datepicker locale for ${locale}`, e);
-
-          this.datepickerLang = null;
         }
       }
     }

@@ -24,6 +24,7 @@ If you care about STAC Browser and have some funds to support the future of STAC
   - [Examples](#examples)
   - [Get Started](#get-started)
     - [Private query parameters](#private-query-parameters)
+    - [Versions](#versions)
     - [Migrate from old versions](#migrate-from-old-versions)
   - [Customize](#customize)
     - [Options](#options)
@@ -60,26 +61,31 @@ npm install
 
 By default, STAC Browser will let you browse all catalogs on STAC Index.
 
-To browse only your own static STAC catalog or STAC API, set the `catalogUrl` CLI parameter when running the dev server.
+To browse only your own static STAC catalog or STAC API, set the [`catalogUrl`](docs/options.md#catalogurl) config parameter when running the dev server.
 In this example we point to EarthSearch (`https://earth-search.aws.element84.com/v1/`):
 
 ```bash
-npm start -- --open --catalogUrl="https://earth-search.aws.element84.com/v1/"
+# Linux / MacOS
+SB_catalogUrl="https://earth-search.aws.element84.com/v1/" npm start
+# Windows (PowerShell)
+$env:SB_catalogUrl="https://earth-search.aws.element84.com/v1/"; npm start
 ```
+
+This will start the development server on <http://localhost:8080>, which you can then open in your preferred browser.
 
 To open a local file on your system, see the chapter [Using Local Files](docs/local_files.md).
 
 If you'd like to publish the STAC Browser instance use the following command:
 
 ```bash
-npm run build -- --catalogUrl="https://earth-search.aws.element84.com/v1/"
+# Linux / MacOS
+SB_catalogUrl="https://earth-search.aws.element84.com/v1/" npm run build
+# Windows (PowerShell)
+$env:SB_catalogUrl="https://earth-search.aws.element84.com/v1/"; npm run build
 ```
 
 This will only work on the root path of your domain though. If you'd like to publish in a sub-folder,
 you can use the [`pathPrefix`](docs/options.md#pathprefix) option.
-
-> [!NOTE]  
-> If you are using a recent version of node/npm on Windows, you may need to use `npm run build -- -- ...` instead of `npm run build -- ...`, see <https://github.com/npm/cli/issues/7375> for details.
 
 After building, `dist/` will contain all assets necessary
 host the browser. These can be manually copied to your web host of choice.
@@ -103,9 +109,25 @@ So for example if your API requires to pass a token via the `API_KEY` query para
 Please note: If the server hosting STAC Browser should not get aware of private query parameters and you are having `historyMode` set to `"history"`, you can also append the private query parameters to the hash so that it doesn't get transmitted to the server hosting STAC Browser.
 In this case use for example `https://examples.com/stac-browser/#?~API_KEY=123` instead of `https://examples.com/stac-browser/?~API_KEY=123`.
 
+### Versions
+
+STAC Browser has gone recently through a number of major versions.
+The following table shows the major differences between versions and the upcoming plans:
+
+| Version   | Summary |
+| --------- | ------- |
+| 3.3.x     | The last version that uses Leaflet as mapping library. |
+| 4.0.x     | Uses OpenLayers as mapping library. The last version based on VueJS 2, vue-cli and Bootstrap 4. |
+| **5.x.x** | The upcoming version based on VueJS 3, Vite and Bootstrap 5. Target: Q1 2026 |
+| 6.x.x     | Planned version with a new layout, a pluggable interface, and better integration into existing sites. Target: Q4 2026 |
+
+For more details on our plans, please check our
+[milestones](https://github.com/radiantearth/stac-browser/milestones).
+
 ### Migrate from old versions
 
-Please read the [migration documentation](docs/migrate.md) for details.
+Please read the [release notes](https://github.com/radiantearth/stac-browser/releases).
+They contain notes on required changes for a smooth migration.
 
 ## Customize
 
@@ -323,7 +345,7 @@ You can also use one of the existing languages and provide an alternate version 
 The following sponsors have provided a substantial amount of funding for STAC Browser in the past:
 
 - [Radiant Earth](https://radiant.earth) (base funding for versions 1, 2 and 3)
-- [swisstopo](https://www.swisstopo.admin.ch/) (maintenance, base funding for version 3 and 4)
+- [swisstopo](https://www.swisstopo.admin.ch/) (maintenance, base funding for version 3, 4, 5 and 6)
 - [National Resources Canada](https://natural-resources.canada.ca/home) (multi-language support, maintenance)
 - [moreGeo GmbH](https://moregeo.it) (maintenance)
 - [Spacebel](https://spacebel.com) (collection search, mapping)
