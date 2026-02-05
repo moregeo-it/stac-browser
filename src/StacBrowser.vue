@@ -74,7 +74,11 @@
           <a :href="link.url" target="_blank">{{ $te(`footerLinks.${link.label}`) ? $t(`footerLinks.${link.label}`) : link.label }}</a>
         </li>
       </ul>
-      <small class="poweredby text-muted">{{ $t('poweredBy') }} <a href="https://github.com/radiantearth/stac-browser" target="_blank">STAC Browser</a> {{ browserVersion }} </small>
+      <i18n-t tag="small" keypath="poweredBy" class="poweredby text-muted" scope="global">
+        <template #link>
+          <a href="https://github.com/radiantearth/stac-browser" target="_blank">STAC Browser</a> {{ browserVersion }}
+        </template>
+      </i18n-t>
     </footer>
     <b-popover
       v-if="root" id="popover-root" class="popover-large" target="popover-root-btn"

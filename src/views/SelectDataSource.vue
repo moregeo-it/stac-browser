@@ -19,7 +19,11 @@
     <hr v-if="stacIndex.length > 0">
     <b-form-group v-if="stacIndex.length > 0" class="stac-index">
       <template #label>
-        {{ $t('index.selectStacIndex') }} <a href="https://stacindex.org" target="_blank">{{ $t('index.stacIndex') }}</a>:
+        <i18n-t keypath="index.selectStacIndex" tag="span" scope="global">
+          <template #stacIndex>
+            <a href="https://stacindex.org" target="_blank">STAC Index</a>
+          </template>
+        </i18n-t>
       </template>
       <b-list-group> 
         <template v-for="catalog in stacIndex" :key="catalog.id">
